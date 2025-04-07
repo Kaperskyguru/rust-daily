@@ -98,6 +98,8 @@ if (page) mbPost = await getPost(route.params.slug);
 
 const post = computed(() => (mbPost ? mbPost : page.value));
 
+console.log(post);
+
 useSeoMeta({
   title: post.value?.title,
   description: post.value?.meta?.summary ?? post.value?.description,
