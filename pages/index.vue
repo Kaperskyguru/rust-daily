@@ -65,7 +65,7 @@ const allPosts = await getRustPosts("rust");
 
 const resolvedPosts = computed(() => {
   return allPosts.push(
-    posts.map((p) => ({
+    posts.value.map((p) => ({
       publishedAt: p?.meta?.date,
       excerpt: p?.meta?.summary ?? p?.description,
       slug: p?.path,
