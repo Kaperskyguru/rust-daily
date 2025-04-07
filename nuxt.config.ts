@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: {
         lang: "en",
-        // class: "dark",
+        class: "dark",
       },
       title: "Rust Daily",
       meta: [
