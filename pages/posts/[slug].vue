@@ -136,6 +136,13 @@ article table {
 }
 
 article tr {
+  padding: 1em;
+  border: 1px solid;
+}
+
+article td,
+th {
+  padding: 1em;
   border: 1px solid;
 }
 </style>
