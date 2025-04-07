@@ -131,6 +131,7 @@ article hr {
 }
 
 article table {
+  margin-block: 1rem;
   padding: 1em;
   border: 1px solid;
 }
