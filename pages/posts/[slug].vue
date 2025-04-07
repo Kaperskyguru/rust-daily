@@ -38,7 +38,9 @@
     >
       <p>
         Read full article:
-        {{ "https://masteringbackend.com/posts/" + post.slug }}
+        <a :href="`https://masteringbackend.com/posts/${post.slug}`">
+          {{ "https://masteringbackend.com/posts/" + post.slug }}</a
+        >
       </p>
     </article>
     <!-- Author -->
