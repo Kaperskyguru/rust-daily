@@ -129,4 +129,12 @@ pre {
 article hr {
   margin-block: 1rem;
 }
+
+article table {
+  padding: 1em;
+}
+
+article table td {
+  @apply border;
+}
 </style>
