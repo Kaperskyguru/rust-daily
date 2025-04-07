@@ -59,8 +59,6 @@
 const { data: posts } = await useAsyncData("blog", () =>
   queryCollection("posts").all()
 );
-
-console.log(posts.value);
 </script>
 
 <style>
