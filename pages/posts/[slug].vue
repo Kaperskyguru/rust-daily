@@ -33,12 +33,15 @@
     />
 
     <article
-      v-if="post"
+      v-if="post && post?.type === 'definitive'"
       class="[&>*>li>a]:text-amber-300 [&>p>a]:text-amber-300 mx-auto w-full max-w-2xl text-zinc-700 dark:text-zinc-300 [&>pre]:overflow-x-auto [&>h2]:mt-14 [&>h2]:text-2xl [&>h2]:font-bold [&>h3]:mt-12 [&>h3]:text-xl [&>h3]:font-bold [&>p]:mt-5 [&>p]:leading-relaxed [&>pre]:mt-5 [&>pre]:rounded-xl [&>pre]:bg-zinc-800 [&>pre]:p-4 [&>pre]:text-sm [&>pre]:font-medium [&>pre]:text-zinc-100 [&>ul]:mt-5 [&>ul]:flex [&>ul]:list-disc [&>ul]:flex-col [&>ul]:gap-2 [&>ul]:pl-6 [&>ol]:mt-5 [&>ol]:flex [&>ol]:list-decimal [&>ol]:flex-col [&>ol]:gap-2 [&>ol]:pl-6"
     >
       <p>
         Read full article:
-        <a :href="`https://masteringbackend.com/posts/${post.slug}`">
+        <a
+          target="_blank"
+          :href="`https://masteringbackend.com/posts/${post.slug}`"
+        >
           {{ "https://masteringbackend.com/posts/" + post.slug }}</a
         >
       </p>
@@ -97,8 +100,6 @@ let mbPost = undefined;
 if (page) mbPost = await getPost(route.params.slug);
 
 const post = computed(() => (mbPost ? mbPost : page.value));
-
-console.log(post);
 
 useSeoMeta({
   title: post.value?.title,
