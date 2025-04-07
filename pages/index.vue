@@ -64,16 +64,15 @@ const { data: posts } = await useAsyncData("blog", () =>
 const allPosts = await getRustPosts("rust");
 
 const resolvedPosts = computed(() => {
-  return allPosts.push(
+  return [...allPosts].concat(
     posts.value.map((p) => ({
+      ...p,
       publishedAt: p?.meta?.date,
       excerpt: p?.meta?.summary ?? p?.description,
       slug: p?.path,
     }))
   );
 });
-
-console.log(resolvedPosts.value);
 </script>
 
 <style>

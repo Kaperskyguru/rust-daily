@@ -3,19 +3,6 @@ export async function usePosts(url: string = "/posts") {
 
   async function init(url: string = "/posts", data: any) {
     try {
-      console.log(url, {
-        ...data,
-        baseURL: config.public.BASE_ENDPOINT_URL,
-        query: {
-          ...data?.query,
-        },
-        method: "get",
-        headers: {
-          Authorization: `bearer ${config.public.STRAPI_TOKEN}`,
-          "Content-Type": "application/json",
-          ...data?.headers,
-        },
-      });
       return await useFetch(url, {
         ...data,
         baseURL: config.public.BASE_ENDPOINT_URL,
@@ -44,18 +31,16 @@ export async function usePosts(url: string = "/posts") {
     );
     const posts = res?.data.value?.data;
 
-    console.log(posts);
+    if (!posts?.length) return [];
 
-    if (!posts?.length) return;
-
-    return resolveProjects(posts);
+    return resolvePosts(posts);
   }
 
-  const resolveProjects = (projects: any) => {
-    return projects?.map((project: any) => {
+  const resolvePosts = (posts: any) => {
+    return posts?.map((post: any) => {
       return {
-        id: project.id,
-        ...project.attributes,
+        id: post.id,
+        ...post.attributes,
       };
     });
   };
