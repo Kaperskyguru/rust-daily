@@ -135,7 +135,7 @@ article table {
   border: 1px solid;
 }
 
-article table td {
+article tr {
   border: 1px solid;
 }
 </style>
