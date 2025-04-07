@@ -132,9 +132,10 @@ article hr {
 
 article table {
   padding: 1em;
+  border: 1px solid;
 }
 
 article table td {
-  @apply border;
+  border: 1px solid;
 }
 </style>
