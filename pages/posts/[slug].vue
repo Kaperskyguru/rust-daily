@@ -32,10 +32,6 @@
       class="[&>*>*>code]:mt-5 [&>*>*>code]:rounded-xl [&>*>*>code]:bg-zinc-800 [&>*>*>code]:p-4 [&>*>*>code]:text-sm [&>*>*>code]:font-medium [&>*>*>code]:text-zinc-100 [&>*>*>code]:overflow-x-auto w-full [&>*>li>pre]:mt-5 [&>*>li>pre]:rounded-xl [&>*>li>pre]:bg-zinc-800 [&>*>li>pre]:p-4 [&>*>li>pre]:text-sm [&>*>li>pre]:font-medium [&>*>li>pre]:text-zinc-100 [&>*>li>pre]:overflow-x-auto [&>*>li>a]:text-amber-300 [&>p>a]:text-amber-300 mx-auto w-full max-w-2xl text-zinc-700 dark:text-zinc-300 [&>pre]:overflow-x-auto [&>h2]:mt-14 [&>h2]:text-2xl [&>h2]:font-bold [&>h3]:mt-12 [&>h3]:text-xl [&>h3]:font-bold [&>p]:mt-5 [&>p]:leading-relaxed [&>pre]:mt-5 [&>pre]:rounded-xl [&>pre]:bg-zinc-800 [&>pre]:p-4 [&>pre]:text-sm [&>pre]:font-medium [&>pre]:text-zinc-100 [&>ul]:mt-5 [&>ul]:flex [&>ul]:list-disc [&>ul]:flex-col [&>ul]:gap-2 [&>ul]:pl-6 [&>ol]:mt-5 [&>ol]:flex [&>ol]:list-decimal [&>ol]:flex-col [&>ol]:gap-2 [&>ol]:pl-6"
     />
 
-    [&>*>*>code]:mt-5 [&>*>*>code]:rounded-xl [&>*>*>code]:bg-zinc-800
-    [&>*>*>code]:p-4 [&>*>*>code]:text-sm [&>*>*>code]:font-medium
-    [&>*>*>code]:text-zinc-100 [&>*>*>code]:overflow-x-auto
-
     <article
       v-if="post && post?.type === 'definitive'"
       class="[&>*>li>pre]:mt-5 [&>*>li>pre]:rounded-xl [&>*>li>pre]:bg-zinc-800 [&>*>li>pre]:p-4 [&>*>li>pre]:text-sm [&>*>li>pre]:font-medium [&>*>li>pre]:text-zinc-100 [&>*>li>pre]:overflow-x-auto [&>*>li>a]:text-amber-300 [&>p>a]:text-amber-300 mx-auto w-full max-w-2xl text-zinc-700 dark:text-zinc-300 [&>pre]:overflow-x-auto [&>h2]:mt-14 [&>h2]:text-2xl [&>h2]:font-bold [&>h3]:mt-12 [&>h3]:text-xl [&>h3]:font-bold [&>p]:mt-5 [&>p]:leading-relaxed [&>pre]:mt-5 [&>pre]:rounded-xl [&>pre]:bg-zinc-800 [&>pre]:p-4 [&>pre]:text-sm [&>pre]:font-medium [&>pre]:text-zinc-100 [&>ul]:mt-5 [&>ul]:flex [&>ul]:list-disc [&>ul]:flex-col [&>ul]:gap-2 [&>ul]:pl-6 [&>ol]:mt-5 [&>ol]:flex [&>ol]:list-decimal [&>ol]:flex-col [&>ol]:gap-2 [&>ol]:pl-6"
