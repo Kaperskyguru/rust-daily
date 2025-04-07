@@ -40,9 +40,8 @@
         </h4>
         <p
           class="mb-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400"
-        >
-          {{ post?.meta?.summary ?? post?.excerpt }}
-        </p>
+          v-html="post?.meta?.summary ?? post?.excerpt"
+        ></p>
         <nuxt-link
           :to="post?.path ?? `/posts/${post?.slug}`"
           class="text-sm font-medium text-amber-600 hover:text-amber-500 dark:text-amber-400 dark:hover:text-amber-300"
