@@ -62,11 +62,18 @@ const { data: posts } = await useAsyncData("blog", () =>
 );
 
 const allPosts = await getRustPosts("rust");
-console.log(allPosts);
 
 const resolvedPosts = computed(() => {
-  return allPosts.push(posts);
+  return allPosts.push(
+    posts.map((p) => ({
+      publishedAt: p?.meta?.date,
+      excerpt: p?.meta?.summary ?? p?.description,
+      slug: p?.path,
+    }))
+  );
 });
+
+console.log(resolvedPosts.value);
 </script>
 
 <style>
