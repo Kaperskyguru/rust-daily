@@ -82,8 +82,8 @@ const { getPost } = await usePosts("/posts");
 const { data: page } = await useAsyncData(route.path, () => {
   return queryCollection("posts").path(route.path).first();
 });
-
-const mbPost = await getPost(route.params.slug);
+let mbPost = undefined;
+if (page) mbPost = await getPost(route.params.slug);
 
 const post = computed(() => (mbPost ? mbPost : page.value));
 
