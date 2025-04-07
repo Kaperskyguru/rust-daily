@@ -51,6 +51,8 @@ export async function usePosts(url: string = "/posts") {
       return {
         id: post.id,
         ...post.attributes,
+        canonical_url:
+          "https://masteringbackend.com/posts/" + post?.attributes?.slug,
       };
     });
   };

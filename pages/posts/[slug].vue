@@ -92,6 +92,18 @@ console.log(post);
 useSeoMeta({
   title: post.value?.title,
   description: post.value?.meta?.summary ?? post.value?.description,
+  "og:url":
+    post.value?.canonical_url ?? "https://rustdaily.com/" + useRoute().path,
+});
+
+useHead({
+  link: [
+    {
+      rel: "canonical",
+      href:
+        post.value?.canonical_url ?? "https://rustdaily.com" + useRoute().path,
+    },
+  ],
 });
 </script>
 
