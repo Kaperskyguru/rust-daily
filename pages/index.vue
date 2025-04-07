@@ -22,17 +22,17 @@
     <div class="mx-auto flex max-w-xl flex-col gap-12">
       <!-- Post -->
 
-      <div class="group relative" v-for="(post, i) in posts" :key="i">
+      <div class="group relative" v-for="(post, i) in resolvedPosts" :key="i">
         <div
           class="absolute top-0 bottom-0 -left-4 w-1 rounded-full bg-linear-to-b from-amber-500 to-amber-400 opacity-0 transition duration-200 ease-out group-hover:opacity-100 sm:-left-6"
         ></div>
         <p class="mb-1 text-sm font-medium text-zinc-600 dark:text-zinc-400">
-          {{ new Date(post.meta.date).toDateString() }} ·
-          {{ post.meta.readTime }} read
+          {{ new Date(post?.meta?.date ?? post?.publishedAt).toDateString() }} ·
+          {{ post?.meta?.readTime ?? "5 min" }} read
         </p>
         <h4 class="mb-2 text-lg font-bold sm:text-xl">
           <nuxt-link
-            :to="post.path"
+            :to="post?.path ?? `/posts/${post?.slug}`"
             class="leading-7 text-zinc-800 hover:text-zinc-600 dark:text-zinc-200 dark:hover:text-zinc-400"
           >
             {{ post.title }}
@@ -41,10 +41,10 @@
         <p
           class="mb-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400"
         >
-          {{ post.meta.summary }}
+          {{ post?.meta?.summary ?? post?.excerpt }}
         </p>
         <nuxt-link
-          :to="post.path"
+          :to="post?.path ?? `/posts/${post?.slug}`"
           class="text-sm font-medium text-amber-600 hover:text-amber-500 dark:text-amber-400 dark:hover:text-amber-300"
           >Read more</nuxt-link
         >
@@ -63,6 +63,10 @@ const { data: posts } = await useAsyncData("blog", () =>
 
 const allPosts = await getRustPosts("rust");
 console.log(allPosts);
+
+const resolvedPosts = computed(() => {
+  return allPosts.push(posts);
+});
 </script>
 
 <style>
