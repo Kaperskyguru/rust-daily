@@ -56,9 +56,13 @@
 </template>
 
 <script setup>
+const { getRustPosts } = await usePosts("/posts");
 const { data: posts } = await useAsyncData("blog", () =>
   queryCollection("posts").all()
 );
+
+const allPosts = await getRustPosts("rust");
+console.log(allPosts);
 </script>
 
 <style>

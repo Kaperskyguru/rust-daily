@@ -118,6 +118,18 @@
             >
               Courses
             </nuxt-link>
+
+            <!-- 
+            
+            Project Ideas => Fetch Rust project ideas
+            Project Examples => List awesome Rust projects and ask users to submit for $10
+            Learning Roadmap => Create a learning roadmap for Rust and all its web frameworks
+            People to Follow => List top Rust engineers to follow
+            Code Exampls => show Rust code examples (Tips)
+
+            Premium Tutorials => Convert your Intermedate and Advanced books to premium tutorials
+
+            -->
           </nav>
           <!-- END Nav -->
         </div>

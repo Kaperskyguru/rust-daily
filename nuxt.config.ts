@@ -62,4 +62,11 @@ export default defineNuxtConfig({
   ssr: true,
 
   modules: ["@nuxt/content"],
+
+  runtimeConfig: {
+    public: {
+      STRAPI_TOKEN: process.env.STRAPI_TOKEN,
+      BASE_ENDPOINT_URL: process.env.BASE_ENDPOINT_URL,
+    },
+  },
 });
