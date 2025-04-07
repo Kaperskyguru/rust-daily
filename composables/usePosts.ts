@@ -36,6 +36,16 @@ export async function usePosts(url: string = "/posts") {
     return resolvePosts(posts);
   }
 
+  async function getPost(slug: string, data: any = {}) {
+    let res: any = await init(`${url}/?filters[slug][$eq]=${slug}`, data);
+
+    const projects = res?.data?.value?.data;
+
+    if (!projects?.length) return;
+
+    return resolvePosts(projects)[0];
+  }
+
   const resolvePosts = (posts: any) => {
     return posts?.map((post: any) => {
       return {
@@ -53,5 +63,6 @@ export async function usePosts(url: string = "/posts") {
 
   return {
     getRustPosts,
+    getPost,
   };
 }
